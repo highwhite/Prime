@@ -12,26 +12,54 @@ class prime{
 	std::vector<int>::iterator ite_list;
 	public:
 void run(){
-	sum=1;
+	position=0;
+	sum=2;
 	MIN=2;
 	MAX=20;
 	std::vector<int> i_base;
 	std::vector<int> i_list;
 	for(;MIN<MAX;)
 		i_base.push_back(MIN++);
-	for(ite_base=i_base.begin(),ite_list=i_list.begin();i_base.end() != ite_base; ite_base++,ite_list++){
-	std::cout << *ite_base<< std::endl;
+	std::cout<<"始まったよ!!";
+
+	ite_base=i_base.begin();
 	i_list.push_back(*ite_base);
 	i_base.erase(ite_base);
 
-	ite_list=i_list.end();
+	for(ite_list=i_list.begin();(*ite_list)*(*ite_list) <= *(i_base.end()-1); ite_list++,position++){
+	std::cout << " ite_list no value1 "<<*ite_list<< std::endl;
+	std::cout << " i_list push_back"<<*ite_base<< std::endl;
+	std::cout << " ite_list no value2 "<<*ite_list<< std::endl;
+	i_list.push_back(*ite_base);
+	std::cout << "i_base erase"<< *ite_base<< std::endl;
+	i_base.erase(ite_base);
 	
+	ite_list=i_list.begin()+position;
 
-	////for_each(ite_base, i_base.end(), [i_list,sum](int x) -> int{if(x==i_list.at(position)*sum)i_base.erase(&x); });
-
+	for(ite_base=i_base.begin();i_base.end() != ite_base; ite_base++){
+		std::cout <<"*ite_base="<< *ite_base<< std::endl;
+		std::cout <<"*ite_list="<< *ite_list<< std::endl;
+	if(*ite_list*sum>=*ite_base){
+		if(*ite_list*sum==*ite_base){
+		std::cout << "inside i_base erase"<< *ite_base<< std::endl;
+		i_base.erase(ite_base);
+		}
+		sum++;
 	}
-	std::cout<<"終わったよ!!";
-		
+	
+	}
+	sum=2;
+	ite_base=i_base.begin();
+	}
+	std::cout << "i_baseのリストは";
+	for(ite_base=i_base.begin(),ite_list=i_list.begin();i_base.end() != ite_base; ite_base++){
+		std::cout << *ite_base<<" ";
+	}
+	//std::cout << *ite_list<< std::endl;
+
+	std::cout<<"です。終わったよ!!";
+	//for(ite_base=i_base.begin(),ite_list=i_list.begin();i_base.end() != ite_base; ite_list++)
+
 };
 };
 int main() try {
