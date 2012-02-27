@@ -53,7 +53,7 @@ void run(){
 		sum=2;
 		ite_base=i_base.begin();
 	}
-	std::cout << "素数は以下の通りです！" <<std::endl
+	std::cout << "素数は以下の通りです！" <<std::endl<<std::endl;
 	std::cout << "i_listのリストは";
 	for(ite_base=i_base.begin(),ite_list=i_list.begin();i_list.end() != ite_list; ite_list++){
 		std::cout << *ite_list<<" ";
